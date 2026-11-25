@@ -1,0 +1,484 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    text-align: center;
+    padding: 50px 20px 25px;
+}
+
+header h1 {
+    margin: 0;
+    color: #f5f5f5;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+header h1 span {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   LINHAS DIVISÓRIAS
+========================= */
+
+hr {
+    width: 92%;
+    margin: 40px auto;
+    border: none;
+    border-top: 3px solid #f5f5f5;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    width: 92%;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+main section:first-child {
+    text-align: center;
+    padding: 10px 0;
+}
+
+main section:first-child h2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+
+main section:first-child p {
+    font-size: 20px;
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+#formCalculadora {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    grid-template-areas:
+        "l1 l2 l3 l4 l5 l6"
+        "n1 p1 n2 p2 pf md"
+        "calc calc calc calc calc calc";
+
+    gap: 15px 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#formCalculadora br {
+    display: none;
+}
+
+#formCalculadora label {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Labels */
+
+label[for="nota1"] {
+    grid-area: l1;
+}
+
+label[for="peso1"] {
+    grid-area: l2;
+}
+
+label[for="nota2"] {
+    grid-area: l3;
+}
+
+label[for="peso2"] {
+    grid-area: l4;
+}
+
+label[for="pesoFinal"] {
+    grid-area: l5;
+}
+
+label[for="mediaDesejada"] {
+    grid-area: l6;
+}
+
+
+/* Campos */
+
+#nota1 {
+    grid-area: n1;
+}
+
+#peso1 {
+    grid-area: p1;
+}
+
+#nota2 {
+    grid-area: n2;
+}
+
+#peso2 {
+    grid-area: p2;
+}
+
+#pesoFinal {
+    grid-area: pf;
+}
+
+#mediaDesejada {
+    grid-area: md;
+}
+
+
+/* Aparência dos campos */
+
+#formCalculadora input {
+    width: 100%;
+    height: 56px;
+    padding: 10px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: linear-gradient(145deg, #f5f5f5, #bdbdbd);
+    color: #222;
+
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+}
+
+#formCalculadora input:focus {
+    box-shadow: 0 0 0 3px #4caf50;
+}
+
+
+/* Botão calcular */
+
+#formCalculadora button {
+    grid-area: calc;
+    justify-self: center;
+
+    margin-top: 12px;
+    padding: 12px 30px;
+
+    border: none;
+    border-radius: 16px;
+
+    background-color: #4caf50;
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+#formCalculadora button:hover {
+    background-color: #3d9141;
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+#resultado {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+}
+
+#resultado strong {
+    color: #4caf50;
+}
+
+#btnCopiar {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 16px;
+
+    background-color: #4caf50;
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btnCopiar:hover {
+    background-color: #3d9141;
+}
+
+#btnCopiar[hidden] {
+    display: none;
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+main section:nth-child(2) {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+main section:nth-child(2) h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+#historico {
+    max-width: 700px;
+    margin: 25px auto;
+    padding-left: 25px;
+}
+
+#historico li {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+#btnLimparHistorico {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+
+    border: 1px solid #4caf50;
+    border-radius: 12px;
+
+    background-color: transparent;
+    color: #4caf50;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btnLimparHistorico:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+/* =========================
+   PUBLICIDADE
+========================= */
+
+aside {
+    width: 320px;
+    max-width: 100%;
+    height: 280px;
+
+    margin: 40px auto;
+    padding: 0;
+
+    text-align: center;
+}
+
+aside h2 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+aside div {
+    width: 300px;
+    max-width: 100%;
+    height: 250px;
+
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+aside img {
+    display: block;
+
+    width: 300px;
+    height: 250px;
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   CONTEÚDO COMPLEMENTAR
+========================= */
+
+body > section {
+    width: 85%;
+    max-width: 1000px;
+
+    margin: 50px auto;
+    line-height: 1.7;
+}
+
+body > section h2 {
+    font-size: 26px;
+}
+
+body > section h3 {
+    margin-top: 30px;
+    color: #4caf50;
+}
+
+body > section p {
+    font-size: 17px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background-color: #181818;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+footer a {
+    color: #4caf50;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+
+    #formCalculadora {
+        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-areas:
+            "l1 l2 l3"
+            "n1 p1 n2"
+            "l4 l5 l6"
+            "p2 pf md"
+            "calc calc calc";
+    }
+
+    #formCalculadora label {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 35px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    main section:first-child h2 {
+        font-size: 20px;
+    }
+
+    main section:first-child p {
+        font-size: 17px;
+    }
+
+    #formCalculadora {
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-areas:
+            "l1 l2"
+            "n1 p1"
+            "l3 l4"
+            "n2 p2"
+            "l5 l6"
+            "pf md"
+            "calc calc";
+
+        gap: 12px;
+    }
+
+    #formCalculadora label {
+        font-size: 14px;
+    }
+
+    #formCalculadora input {
+        height: 48px;
+        border-radius: 14px;
+        font-size: 16px;
+    }
+
+    #formCalculadora button {
+        font-size: 18px;
+    }
+
+    #resultado {
+        font-size: 18px;
+    }
+
+    #btnCopiar {
+        font-size: 17px;
+    }
+
+    body > section {
+        width: 90%;
+    }
+
+}

@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CalculaNota</title>
+
+    <meta name="description"
+        content="Descubra quanto precisa tirar na próxima prova para alcançar sua média final.">
+
+    <meta name="author" content="Guilherme Thomazoni">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>CalculaNota</h1>
+        <p>Calculadora de nota final</p>
+    </header>
+
+    <!-- FERRAMENTA -->
+    <main>
+
+        <section>
+            <h2>Quanto preciso tirar na prova?</h2>
+
+            <p>
+                Informe suas notas e descubra quanto precisa
+                tirar na próxima avaliação.
+            </p>
+
+            <form id="formCalculadora">
+
+                <label for="nota1">Nota da primeira prova:</label>
+                <input type="number" id="nota1"
+                    min="0" max="10" step="0.01"
+                    value="7" required>
+
+                <br><br>
+
+                <label for="peso1">Peso da primeira prova (%):</label>
+                <input type="number" id="peso1"
+                    min="0" max="100" step="1"
+                    value="40" required>
+
+                <br><br>
+
+                <label for="nota2">Nota da segunda prova:</label>
+                <input type="number" id="nota2"
+                    min="0" max="10" step="0.01"
+                    value="6" required>
+
+                <br><br>
+
+                <label for="peso2">Peso da segunda prova (%):</label>
+                <input type="number" id="peso2"
+                    min="0" max="100" step="1"
+                    value="30" required>
+
+                <br><br>
+
+                <label for="pesoFinal">Peso da prova final (%):</label>
+                <input type="number" id="pesoFinal"
+                    min="0" max="100" step="1"
+                    value="30" required>
+
+                <br><br>
+
+                <label for="mediaDesejada">Média desejada:</label>
+                <input type="number" id="mediaDesejada"
+                    min="0" max="10" step="0.01"
+                    value="7" required>
+
+                <br><br>
+
+                <button type="submit">Calcular nota</button>
+
+            </form>
+
+            <h3 id="resultado"></h3>
+
+            <button id="btnCopiar" hidden>
+                Copiar resultado
+            </button>
+
+        </section>
+
+        <!-- HISTÓRICO -->
+        <section>
+            <h2>Últimos cálculos</h2>
+
+            <ul id="historico"></ul>
+
+            <button id="btnLimparHistorico">
+                Limpar histórico
+            </button>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ESPAÇO PUBLICITÁRIO -->
+    <!-- ESPAÇO PUBLICITÁRIO -->
+    <aside>
+        <h2>Publicidade</h2>
+
+        <div>
+            <img src="memepedro.png" alt="Anúncio publicitário">
+        </div>
+    </aside>
+
+    <hr>
+
+    <!-- CONTEÚDO COMPLEMENTAR -->
+    <section>
+        <h2>Como calcular sua nota final?</h2>
+
+        <p>
+            A nota final é calculada multiplicando cada nota
+            pelo seu peso e somando os resultados.
+        </p>
+
+        <p>
+            Os pesos das avaliações devem somar 100%.
+        </p>
+
+        <p>
+            Exemplo: uma prova com nota 8 e peso 40%
+            contribui com 3,2 pontos para a média final.
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Desenvolvido por Guilherme Thomazoni</p>
+
+        <a href="https://guilherme-thomazoni.github.io/projeto-web1/" target="_blank">
+            Meu site pessoal
+        </a>
+    </footer>
+
+</body>
+
+</html>
